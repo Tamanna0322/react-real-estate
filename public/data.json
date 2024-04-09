@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "estate_title": "Sky High Penthouse",
+      "segment_name": "Penthouse",
+      "description": "Experience urban living at its finest in this luxurious penthouse boasting breathtaking city views. With spacious interiors, modern amenities, and exclusive access to top-tier facilities, this penthouse offers the epitome of luxury living.",
+      "price": "$5,000,000",
+      "status": "sale",
+      "area": "3000 sq ft",
+      "location": "Metropolis City",
+      "facilities": ["panoramic terrace", "gym", "sauna"],
+      "image": "https://i.ibb.co/L87Vf04/The-interior-design-of-this-penthouse-features-bold-art-pieces-that-add-character-to-the-luxurious-s.jpg"
+    },
+    {
+      "id": 2,
+      "estate_title": "Sunset Villa by the Sea",
+      "segment_name": "Beachfront Property",
+      "description": "Indulge in the serenity of coastal living with this stunning beachfront villa. Embrace panoramic ocean views, private beach access, and luxurious amenities designed for relaxation and entertainment.",
+      "price": "$8,500,000",
+      "status": "sale",
+      "area": "5000 sq ft",
+      "location": "Tropical Paradise Bay",
+      "facilities": ["infinity pool", "private beach cabana", "outdoor kitchen"],
+      "image": "https://i.ibb.co/qrjG3t9/1-157.jpg"
+    },
+    {
+      "id": 3,
+      "estate_title": "Exquisite Oasis Resort",
+      "segment_name": "Resort",
+      "description": "Escape to paradise with this exclusive resort offering unparalleled luxury and tranquility. Surrounded by lush tropical gardens and featuring world-class amenities, this resort promises an unforgettable retreat.",
+      "price": "$15,000,000",
+      "status": "sale",
+      "area": "10 acres",
+      "location": "Serenity Island",
+      "facilities": ["spa", "tennis courts", "private villas"],
+      "image": "https://i.ibb.co/K5WzdCT/resort-bg.png"
+    },
+    {
+      "id": 4,
+      "estate_title": "Secluded Island Sanctuary",
+      "segment_name": "Private Island",
+      "description": "Own your private paradise with this pristine island retreat. Enjoy seclusion, natural beauty, and unparalleled luxury amidst crystal-clear waters and lush landscapes.",
+      "price": "$25,000,000",
+      "status": "sale",
+      "area": "50 acres",
+      "location": "Azure Dreams Atoll",
+      "facilities": ["helipad", "luxury villas", "private marina"],
+      "image": "https://i.ibb.co/d0zvnjg/NINTCHDBPICT000508389368.webp"
+    },
+    {
+      "id": 5,
+      "estate_title": "Majestic Hilltop Villa",
+      "segment_name": "Villa",
+      "description": "Perched atop a scenic hillside, this majestic villa offers panoramic views of the surrounding landscape. Featuring opulent interiors, expansive outdoor spaces, and world-class amenities, it's the epitome of luxury living.",
+      "price": "$12,000,000",
+      "status": "sale",
+      "area": "7000 sq ft",
+      "location": "Mountain Vista Estate",
+      "facilities": ["home theater", "infinity pool", "wine cellar"],
+      "image": "https://i.ibb.co/qyQGVmH/295090917.jpg"
+    },
+    {
+      "id": 6,
+      "estate_title": "Grandiose Manor Estate",
+      "segment_name": "Mansion",
+      "description": "Step into luxury with this grandiose mansion boasting timeless elegance and unparalleled opulence. Featuring exquisite craftsmanship, expansive grounds, and lavish amenities, it offers a lifestyle of utmost refinement.",
+      "price": "$20,000,000",
+      "status": "sale",
+      "area": "15,000 sq ft",
+      "location": "Royal Oaks Boulevard",
+      "facilities": ["ballroom", "indoor pool", "guest wing"],
+      "image": "https://i.ibb.co/QHqW3kg/1347183.png"
+    }
+  ]
+  
