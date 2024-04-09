@@ -9,12 +9,15 @@ import Root from './components/Root/Root';
 import Home from './components/Home/Home';
 import UpdateProfile from './components/UpdateProfile/UpdateProfile';
 import UserProfile from './components/UserProfile/UserProfile';
+import Login from './components/Login/Login';
+import ErrorPage from './components/Errorpage/ErrorPage';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children:[
       {
         path: '/',
@@ -27,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: '/userProfile',
         element: <UserProfile></UserProfile>
+      },
+      {
+        path: '/',
+        element: <Login></Login>
       }
     ]
 

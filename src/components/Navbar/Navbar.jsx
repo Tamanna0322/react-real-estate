@@ -44,7 +44,7 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </div>
-                <a className="btn">Logout</a>
+                <NavLink to='/login' className={({ isActive }) => isActive ? 'text-green-600 px-4 py-2 font-bold rounded-lg border border-green-600  ' : 'font-semibold text-black'}>Login</NavLink>
             </div>
         </div>
     );
