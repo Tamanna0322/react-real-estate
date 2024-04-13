@@ -11,6 +11,7 @@ import UpdateProfile from './components/UpdateProfile/UpdateProfile';
 import UserProfile from './components/UserProfile/UserProfile';
 import Login from './components/Login/Login';
 import ErrorPage from './components/Errorpage/ErrorPage';
+import Register from './components/Register/Register';
 
 
 const router = createBrowserRouter([
@@ -32,8 +33,12 @@ const router = createBrowserRouter([
         element: <UserProfile></UserProfile>
       },
       {
-        path: '/',
+        path: '/login',
         element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
       }
     ]
 
