@@ -13,7 +13,7 @@ const EstateCard = ({estateCard}) => {
            <p className='text-blue-950 font-semibold mr-6'>Status: <span className='text-[#0056b3]'>{estateCard.status}</span></p>
            </div>
            <hr />
-           <div className='flex mb-5 justify-between font-bold text-blue-950 mt-2'>
+           <div className='flex mb-5 justify-between font-bold text-blue-950 mt-3'>
            <p className='flex items-center text-[#0056b3]'><SlLocationPin className='text-blue-950 text-xl mr-1'></SlLocationPin>{estateCard.location}</p>
            </div>
            <button className='btn w-full bg-blue-800 text-white'>View Property</button>
