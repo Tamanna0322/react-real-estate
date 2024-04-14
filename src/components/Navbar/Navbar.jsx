@@ -1,8 +1,13 @@
 import { NavLink } from "react-router-dom";
 import logo from '../../assets/logo.webp';
+import { useContext } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const Navbar = () => {
+
+    const {logout, user} = useContext(AuthContext);
+    console.log(user);
 
     return (
         <div className="navbar bg-base-100">
@@ -40,21 +45,23 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <div className="dropdown dropdown-end md:mr-3 ">
-                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                        </div>
-                    </div>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                        <li>
-                            <a className="justify-between">
-                                Profile
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <NavLink to='/login' className={({ isActive }) => isActive ? 'text-green-600 px-4 py-2 font-bold rounded-lg border border-green-600  ' : 'font-semibold text-blue-800'}>Login</NavLink>
+              {
+                 user ? <div className="dropdown dropdown-end md:mr-3 flex">
+                 <div tabIndex={0} role="button" className="btn btn-circle avatar tooltip tooltip-bottom" data-tip={user?.displayName}>
+                     <div className=" rounded-full">
+                         <img className="w-full" alt="" src={user?.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} />
+                     </div>
+                 </div>
+                                  
+                 <button onClick={logout} className="bg-blue-600 text-white px-3 rounded-lg ml-3">
+                            Logout
+                         </button>
+             </div>
+             :
+             <NavLink to='/login'
+              className={({ isActive }) => isActive ? 'text-green-600 px-4 py-2 font-bold rounded-lg border border-green-600  ' : 'font-semibold text-blue-800'}>
+                 Login</NavLink>
+              }
             </div>
         </div>
     );
