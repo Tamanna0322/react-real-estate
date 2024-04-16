@@ -1,4 +1,4 @@
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import registerImg from '../../assets/register.webp';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useContext, useState } from 'react';
@@ -7,11 +7,12 @@ import { useForm } from 'react-hook-form';
 
 const Register = () => {
 
+  const { createUser } = useContext(AuthContext);
+
   const navigate = useNavigate();
-  const location = useLocation();
 
   const [showPass, setShowPass] = useState(false);
-  const { createUser } = useContext(AuthContext);
+ 
 
   const {
     register,
@@ -23,9 +24,9 @@ const Register = () => {
     const {email, password} = data
     createUser(email, password)
     .then(result =>{
-      // console.log(result.user)
+      console.log(result.user)
       if(result.user){
-        navigate(location?.state || '/')
+        navigate('/')
       }
     })
   }

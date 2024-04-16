@@ -47,7 +47,7 @@ const Navbar = () => {
             <div className="navbar-end">
               {
                  user ? <div className="dropdown dropdown-end md:mr-3 flex">
-                 <div tabIndex={0} role="button" className="btn btn-circle avatar tooltip tooltip-bottom" data-tip={user?.displayName}>
+                 <div tabIndex={0} role="button" className="btn btn-circle avatar tooltip tooltip-bottom" data-tip={user?.displayName || 'User name not found'}>
                      <div className=" rounded-full">
                          <img className="w-full" alt="" src={user?.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} />
                      </div>
