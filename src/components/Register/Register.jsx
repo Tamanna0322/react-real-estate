@@ -62,7 +62,7 @@ const Register = () => {
           }
         })
 
-          setUser({...user,displayName:fullName,photoURL:image})
+          setUser({...user,displayName:fullName,photoURL:image,email:email})
           
       
       })
