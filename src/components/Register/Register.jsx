@@ -7,11 +7,12 @@ import { useForm } from 'react-hook-form';
 
 const Register = () => {
 
-  const { createUser } = useContext(AuthContext);
+  const { user, createUser, updateUsersProfile, setUser } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
   const [showPass, setShowPass] = useState(false);
+  const [error, setError] = useState('')
  
 
   const {
@@ -21,13 +22,37 @@ const Register = () => {
   } = useForm()
 
   const onSubmit = (data) => {
-    const {email, password} = data
+    const {email, password, fullName, image} = data
+
+    if(password.length < 6){
+      setError("password must be atleast six characters")
+      return
+    }
+
+    if(!/[A-Z]/.test(password)){
+      setError("password must have an uppercase letter")
+      return
+    }
+
+    if(!/[a-z]/.test(password)){
+      setError("password must have a lowercase letter")
+      return
+    }
+
+
+    setError('')
+
     createUser(email, password)
-    .then(result =>{
-      console.log(result.user)
-      if(result.user){
-        navigate('/')
-      }
+    .then((result) =>{
+      setUser(result.user)
+      updateUsersProfile(fullName, image)
+      .then(() => {
+        
+          navigate('/')
+          setUser({...user,displayName:fullName,photoURL:image})
+      
+      })
+     
     })
   }
 
@@ -88,6 +113,7 @@ const Register = () => {
                 </span>
               </div>
               {errors.password && <span className='text-red-500'>This field is required</span>}
+              {error && <small className='text-red-500'>{error}</small>}
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Register</button>
               </div>

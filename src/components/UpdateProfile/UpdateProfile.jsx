@@ -5,8 +5,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 
 const UpdateProfile = () => {
-    const { user, updateUsersProfile } = useContext(AuthContext);
-     console.log(user)
+    const { user, updateUsersProfile, setUser} = useContext(AuthContext);
+    //  console.log(user)
 
      const navigate = useNavigate();
      const location = useLocation();
@@ -24,6 +24,7 @@ const UpdateProfile = () => {
           updateUsersProfile(fullName, image)
           .then(() =>{
             navigate(location?.state || '/')
+            setUser({...user,displayName:fullName,photoURL:image})
           })
        
       }
@@ -31,9 +32,9 @@ const UpdateProfile = () => {
 
 
     return (
-        <div className="my-10 border rounded-2xl bg-gradient-to-r from-blue-200 via-blue-100 to-blue-300 text-base-content md:w-[80%] mx-auto">
+        <div className="mt-12 mb-16 border rounded-2xl bg-gradient-to-r from-blue-200 via-blue-100 to-blue-300 text-base-content md:w-[80%] mx-auto">
            <div className="flex flex-col items-center p-4 mb-7">
-            <h2 className="md:text-4xl text-2xl text-blue-900 font-bold">Update Your Profile</h2>
+            <h2 className="md:text-4xl text-2xl text-blue-900 mt-5 mb-2 font-bold">Hey <span className="text-primary">{user?.displayName || "User"}</span>, <br /> Lets make your profile shine!</h2>
             <div className=" border-2 rounded-full mt-5">
                 <img className="w-[100px] h-[100px] rounded-full" src={user?.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} alt="" />
             </div>
