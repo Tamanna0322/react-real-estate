@@ -24,6 +24,9 @@ const Navbar = () => {
                        {
                         user &&  <NavLink to='/userProfile' className={({ isActive }) => isActive ? 'text-blue-600  font-bold rounded-lg ' : 'font-semibold text-blue-800'}>User Profile</NavLink>
                        }
+                       {
+                        user &&  <NavLink to='/booking' className={({ isActive }) => isActive ? 'text-blue-600  font-bold rounded-lg ' : 'font-semibold text-blue-800'}>Booking Now</NavLink>
+                       }
                     </ul>
                 </div>
                <div className="flex items-center">
@@ -48,6 +51,9 @@ const Navbar = () => {
                        }
                        {
                         user &&  <NavLink to='/userProfile' className={({ isActive }) => isActive ? 'text-blue-600 px-4 py-2 font-bold rounded-lg border border-blue-600 ' : 'font-semibold text-blue-800'}>User Profile</NavLink>
+                       }
+                       {
+                        user &&  <NavLink to='/booking' className={({ isActive }) => isActive ? 'text-blue-600 px-4 py-2 font-bold rounded-lg border border-blue-600 ' : 'font-semibold text-blue-800'}>Booking Now</NavLink>
                        }
                        {
                         !user && <NavLink to='/register' className={({ isActive }) => isActive ? 'text-blue-600 px-4 py-2 font-bold rounded-lg border border-blue-600 ' : 'font-semibold text-blue-800'}>Register</NavLink>

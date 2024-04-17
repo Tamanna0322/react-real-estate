@@ -15,6 +15,7 @@ import Register from './components/Register/Register';
 import EstateDetails from './components/EstateDetails/EstateDetails';
 import AuthProvider from './AuthProvider/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Booking from './components/Booking/Booking';
 
 
 const router = createBrowserRouter([
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
         path: '/estateCard/:id',
         element: <PrivateRoute><EstateDetails></EstateDetails></PrivateRoute>,
         loader: () => fetch('/data.json')
+      },
+      {
+        path: '/booking',
+        element: <PrivateRoute><Booking></Booking></PrivateRoute>
       }
     ]
 
