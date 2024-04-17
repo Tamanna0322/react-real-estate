@@ -36,16 +36,24 @@ const UpdateProfile = () => {
            <div className="flex flex-col items-center p-4 mb-7">
             <h2 className="md:text-4xl text-2xl text-blue-900 mt-5 mb-2 font-bold">Hey <span className="text-primary">{user?.displayName || "User"}</span>, <br /> Lets make your profile shine!</h2>
             <div className=" border-2 rounded-full mt-5">
-                <img className="w-[100px] h-[100px] rounded-full" src={user?.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} alt="" />
+                <img className="w-[130px] h-[130px] rounded-full" src={user?.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} alt="" />
             </div>
-            <p className="text-blue-700 font-bold mt-3">{user?.email}</p>
+           
             <div className="border mt-7 border-blue-800 border-dotted bg-gradient-to-r from-blue-100 via-blue-50 to-blue-100 text-base-content px-6 py-4 md:w-[70%] rounded-xl mb-6">
             <form  onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control">
                 <label className="label">
+                  <span className="label-text text-blue-900 font-semibold">User Email</span>
+                </label>
+                <input type="text" className="input input-bordered" 
+                   value={user?.email}
+                 />
+              </div>
+            <div className="form-control">
+                <label className="label">
                   <span className="label-text text-blue-900 font-semibold">Update Name</span>
                 </label>
-                <input type="text" placeholder="update your name" className="input input-bordered"
+                <input type="text" placeholder="update your name" className="input input-bordered" defaultValue={user?.displayName}
                     {...register("fullName")}
                  />
               </div>
@@ -53,7 +61,7 @@ const UpdateProfile = () => {
                 <label className="label">
                   <span className="label-text text-blue-900 font-semibold">Update PhotoURL</span>
                 </label>
-                <input type="text" placeholder="update your PhotoURL" className="input input-bordered"
+                <input type="text" placeholder="update your PhotoURL" className="input input-bordered" defaultValue={user?.photoURL}
                    {...register("image")} 
                 />
               </div>

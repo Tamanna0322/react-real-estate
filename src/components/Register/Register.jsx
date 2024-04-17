@@ -4,6 +4,8 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { useForm } from 'react-hook-form';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
 
@@ -42,14 +44,25 @@ const Register = () => {
 
     setError('')
 
+
+
     createUser(email, password)
     .then((result) =>{
       setUser(result.user)
       updateUsersProfile(fullName, image)
       .then(() => {
-        
-          navigate('/')
+        toast.success("Registration complete", {
+          position: "top-right",
+          autoClose: 2000,
+          onClose: () =>{
+            setTimeout(() => {
+              navigate('/')
+            });
+          }
+        })
+
           setUser({...user,displayName:fullName,photoURL:image})
+          
       
       })
      
@@ -124,6 +137,7 @@ const Register = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
