@@ -4,6 +4,7 @@ import lux from '../../assets/lux.jpg'
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { NavLink } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 
 const Booking = () => {
@@ -26,6 +27,9 @@ const Booking = () => {
 
     return (
         <div className='mt-10 mb-20'>
+            <Helmet>
+                <title>LuxeDwellings | BookNow</title>
+            </Helmet>
             <div className='bg-center flex justify-center items-center bg-no-repeat lg:w-full lg:h-[580px] h-[450px] rounded-3xl bg-cover' style={{ backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(${lux})` }}>
                 <div className='md:w-[50%] w-[87%] mx-auto text-white text-center bg-[#00000061] lg:p-8 md:p-4 p-2 rounded-2xl'>
                     <h3 className='lg:text-4xl md:text-2xl text-xl font-bold mt-5'>Booking Now & Get <span className='text-red-600'>50% OFF</span></h3>

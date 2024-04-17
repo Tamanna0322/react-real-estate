@@ -7,6 +7,7 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet-async';
 
 
 const Login = () => {
@@ -71,6 +72,9 @@ const Login = () => {
 
   return (
     <div className="my-4">
+      <Helmet>
+        <title>LuxeDwellings | Login</title>
+      </Helmet>
       <div className="hero min-h-screen ">
         <div className="hero-content flex flex-col md:flex-row-reverse">
           <div className="text-center lg:text-left md:w-[50%] w-[80%] lg:w-full">

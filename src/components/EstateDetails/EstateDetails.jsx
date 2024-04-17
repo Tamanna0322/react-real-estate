@@ -1,5 +1,6 @@
 import { NavLink, useLoaderData, useParams } from "react-router-dom";
 import { SlLocationPin } from "react-icons/sl";
+import { Helmet } from "react-helmet-async";
 
 const EstateDetails = () => {
 
@@ -11,6 +12,11 @@ const EstateDetails = () => {
 
     return (
         <div className="flex flex-col lg:flex-row justify-between mt-14 mb-6 md:p-4 p-2">
+            <Helmet>
+                <title>
+                LuxeDwellings | Estate: {id}
+                </title>
+            </Helmet>
             <div className="lg:w-[54%] relative mb-6">
                  <div className="bg-primary md:w-[90px] md:h-[90px] w-[70px] h-[70px] text-white font-bold flex justify-center items-center rounded-full absolute md:-left-[2%] -left-[4%] -top-5">
                     <h3>{detail.status}</h3>

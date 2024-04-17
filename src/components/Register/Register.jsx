@@ -6,6 +6,7 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
 
@@ -71,6 +72,9 @@ const Register = () => {
 
   return (
     <div className='my-4'>
+      <Helmet>
+        <title>LuxeDwellings | Register</title>
+      </Helmet>
       <div className="hero min-h-screen p-3">
         <div className="flex items-center flex-col md:flex-row justify-around w-full h-full ">
           <div className=" lg:text-left md:w-[30%] w-[70%]">

@@ -14,12 +14,16 @@ import img6 from '../../assets/img6.jpg';
 
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import Estates from '../Estates/Estates';
+import { Helmet } from 'react-helmet-async';
 
 
 const Home = () => {
 
     return (
-        <div className="" >
+        <div>
+            <Helmet>
+                <title>LuxeDwellings | Home</title>
+            </Helmet>
     
             <Swiper
                 spaceBetween={30}
